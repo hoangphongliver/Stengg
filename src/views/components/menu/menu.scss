@@ -1,0 +1,182 @@
+.menu {
+  background: #777777;
+  @include max-xl{
+    display: none;
+  }
+  .container {
+    @include max-xl{
+      width: 970px;
+    }
+    .mega-menu {
+      display: flex;
+      width: 100%;
+      height: 65px;
+      position: relative;
+      .menu-drop-1 {
+        width: 23%;
+        line-height: 65px;
+        letter-spacing: 1px;
+        text-align: center;
+        > a {
+          font-size: 19px;
+          color: white;
+          text-transform: uppercase;
+          font-family: $font-montserrat-bold;
+          font-weight: 900;
+          &::after {
+            content: "\f107";
+            font-family: "FontAwesome";
+            display: inline-block;
+            font-size: 18px;
+            margin-left: 8px;
+          }
+        }
+        &:hover {
+          background: #e30613;
+          a:after {
+            transform: rotate(180deg);
+          }
+          .menu-drop-2 {
+            height: 240px;
+            border-top: 7px solid #e30613;
+            overflow: hidden;
+            opacity: 1;
+          }
+          .menu-drop2-height {
+            height: 298px;
+          }
+        }
+        .menu-drop-2 {
+          position: absolute;
+          left: 0;
+          top: 65px;
+          width: 100%;
+          height: 0;
+          overflow: hidden;
+          background: #e7e7e7;
+          transition: 0.4s;
+          text-align: initial;
+          opacity: 0;
+          > .drop-2 {
+            width: 254px;
+            background: #dbdbdb;
+            line-height: initial;
+            height: 100%;
+            border-right: 1px solid #c5c5c5;
+            > li {
+              // position: relative;
+              padding: 18px 0;
+              border-bottom: 1px solid #cbcbcb;
+              &:hover {
+                background: #666666;
+                a {
+                  color: white;
+                }
+                .drop3 {
+                  display: block;
+                }
+              }
+              &:hover:after {
+                color: white;
+                right: 10px;
+              }
+              > a {
+                padding: 0 0 0 30px;
+                color: #555555;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+              }
+              &:last-child {
+                border-bottom: none;
+              }
+              .drop3 {
+                display: none;
+                position: absolute;
+                background: #e7e7e7;
+                right: 0;
+                top: 0;
+                height: 240px;
+                width: calc(100% - 254px);
+                z-index: 10;
+                li {
+                  width: 49.5%;
+                  display: inline-block;
+                  margin-top: 15px;
+                  vertical-align: top;
+                  padding-right: 45px;
+                  a {
+                    font-size: 14px;
+                    color: #555555;
+                    padding-left: 40px;
+                    letter-spacing: 0px;
+                    &:hover {
+                      color: #e30613;
+                      transition: 0.2s;
+                    }
+                  }
+                }
+              }
+              &::after {
+                content: "\f105";
+                font-size: 15px;
+                font-family: $font-fontawesome;
+                float: right;
+                margin-right: 20px;
+                color: #555555;
+              }
+              &:hover::after {
+                margin-right: 12px;
+              }
+            }
+            .active {
+              background: #666666;
+              a {
+                color: white;
+              }
+              &::after {
+                color: white;
+                margin-right: 12px;
+              }
+              .drop3 {
+                display: block;
+              }
+            }
+            .active1 {
+              background: #666666;
+              a {
+                color: white;
+              }
+              &::after {
+                color: white;
+                margin-right: 12px;
+              }
+            }
+          }
+        }
+        .menu-drop2-height {
+          height: 0;
+        }
+      }
+      .btn-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #555555;
+        width: 100px;
+        &:hover {
+          span::after {
+            color: #e30613;
+            transition: 0.5s;
+          }
+        }
+        span::after {
+          content: "\f002";
+          font-family: "FontAwesome";
+          display: inline-block;
+          font-size: 20px;
+          color: white;
+        }
+      }
+    }
+  }
+}
